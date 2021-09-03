@@ -2,7 +2,7 @@
 
 Available as a nuget package with name [`IOF.XML.V3`](https://www.nuget.org/packages/IOF.XML.V3/)
 
-Sample class to be used with dependency injection bleow. The implementation below is to read and write files to disk but can be modified to work with `strings` and `memory streams`.
+Sample `XmlSerializerService` classa and interface to be used with dependency injection is listed below. The implementation below is to read and write files to disk but can be modified to work with `strings` and `memory streams` as required.
 
 
 ```c#
@@ -38,7 +38,7 @@ public class XmlSerializerService : IXmlSerializerService {
 
 Add `services.AddSingleton<IXmlSerializerService, XmlSerializerService>();` to `ConfigureServices` in the `Startup.cs` file, if you are using DotNetCore with dependency injection.
 
-As an example, `ResultList` files should now be able to be loaded with:
+As an example, `ResultList` files can now be able to be loaded with:
 
 ```c#
 var results = _XmlSerializerService.Deserialize<ResultList>(xmlFilePath);
